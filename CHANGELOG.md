@@ -3,6 +3,7 @@
 ## Unreleased
 
 * Exported `NameID` (formerly `NameId`), and renamed `subjectNameId` to `subjectNameID`
+* Added new field `inResponseTo` to `Result` type
 
 ## 0.3
 
