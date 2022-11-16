@@ -200,7 +200,7 @@ validateResponse cfg responseData = runExceptT $ do
            forM_ conditionsAudienceRestrictions $
               \(AudienceRestriction audiences) ->
                  unless (any (`elem` ourAudiences) audiences)
-                   $ throwError NotValid
+                   $ throwError (AudienceMismatch audiences)
 
     -- all checks out, return the assertion
     pure assertion
