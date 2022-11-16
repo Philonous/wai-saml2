@@ -35,6 +35,10 @@ data SAML2Config = SAML2Config {
     saml2ExpectedIssuer :: !(Maybe T.Text),
     -- | The URL we expect the SAML2 response to contain as destination.
     saml2ExpectedDestination :: !(Maybe T.Text),
+    -- | The audiences we are a member of. An assertions is only valid if we are
+    -- a member of at least one of its audiences. Leaving this empty disables
+    -- the check
+    saml2Audiences :: ![T.Text],
     -- | A value indicating whether to disable time validity checks. This
     -- should not be set to 'True' in a production environment, but may
     -- be useful for testing purposes.
@@ -54,6 +58,7 @@ saml2Config privKey pubKey = SAML2Config{
     saml2PublicKey = pubKey,
     saml2ExpectedIssuer = Nothing,
     saml2ExpectedDestination = Nothing,
+    saml2Audiences = [],
     saml2DisableTimeValidation = False,
     saml2RequireEncryptedAssertion = True
 }
