@@ -3,6 +3,7 @@
 ## Unreleased
 
 * Exported `NameID` (formerly `NameId`), and renamed `subjectNameId` to `subjectNameID`
+* Validate audience restrictions  (https://github.com/mbg/wai-saml2/issues/34)
 
 ## 0.3
 
