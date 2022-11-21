@@ -4,6 +4,7 @@
 
 * Exported `NameID` (formerly `NameId`), and renamed `subjectNameId` to `subjectNameID`
 * Add new module `Network.Wai.SAML2.Request` with AuthnRequest generation for SP-initiated login flow
+* Added new field `inResponseTo` to `Result` type
 
 ## 0.3
 
